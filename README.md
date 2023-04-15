@@ -4,6 +4,7 @@ squad training stuff
 in code comments marked like following are not working stuff and thoughts how to solve it: //!!
 
 To Do:
+
     > Get the role list command working.
     
     > Set the pictures of the embeds right.
