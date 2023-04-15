@@ -15,10 +15,10 @@ commandFiles.forEach((commandFile) => {
 
 client.once("ready", () => { // Get the ready event once (when the bot logged in) and output the tag of the bot if login was succesfull
     console.log(`Ready! Logged in as ${client.user.tag}!`)
-    client.user.setActivity("your every move.", {type:3, url:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}) // Sets the Activity, URL only works for 1, 0=Playing, 1=Streaming, 2=Listening, 3=Watching, 4=Custom, 5=Competing
+    client.user.setPresence({ activities: [{ name: 'with fidget toys.' }], status: 'online' }); // Set status and activity
 })
 
-client.on("interactionCreate", async (interaction) => { // listen to the interactionCreate event and add a paramter with async mit einer async function
+client.on("interactionCreate", async (interaction) => { // listen to the interactionCreate event and add a paramter with async function
 
     if(!interaction.isCommand()) return // return if it is not a slash command
 
@@ -26,7 +26,7 @@ client.on("interactionCreate", async (interaction) => { // listen to the interac
 
     if(command) { // test if the command exists
         try {
-            await command.execute(interaction);
+            await command.execute(interaction, client);
         } catch (error) {
             console.error(error);
 
@@ -39,4 +39,9 @@ client.on("interactionCreate", async (interaction) => { // listen to the interac
     }
 })
 
+//!! on member leave/kick/ban remove that member from the list
+//!! on role update, check if it is one of the wanted roles, then get the message id from the file, then update the list and update the embed(s)
+
 client.login(process.env.DISCORD_BOT_TOKEN) // Client logs in with the token from the .env file
+
+//IGNORE: members = message.guild.roles.cache.find(role => role.name === 'role name').members.map(m=>m.user.tag);
