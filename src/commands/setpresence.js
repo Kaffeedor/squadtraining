@@ -1,3 +1,4 @@
+// why tf doesnt this give an error but also not working?
 require("dotenv").config()
 const { SlashCommandBuilder, EmbedBuilder } = require("@discordjs/builders"); // Import the SlashCommandBuilder from Discordjs Builders for easier command building 
 
@@ -14,10 +15,10 @@ module.exports = {
         const url = options.getString("url");
         const status = options.getString("status");
 
-        if (interaction.user.id != process.env.ADMIN_USERID_1 && interaction.user.id != process.env.ADMIN_USERID_2) return await interaction.reply({ content:"This Command is only for Bot- devs/admins.", ephemeral:true});
+        if (interaction.user.id != process.env.ADMIN_USERID_1 && interaction.user.id != process.env.ADMIN_USERID_2) return await interaction.reply({ content:"This Command is only for bot-devs/-admins.", ephemeral:true});
         else {
-            client.user.setPresence({ activities: [{ name:content, type:type, url:url }], status:status}); // Set status and activity
-            await interaction.reply("This seemed to work.")
+            interaction.client.user.setPresence({activities: [{ name:`${content}`, type:`${type}`, url:`${url}`}], status:`${status}`}) // Set status and activity //!! for some reason the activity thing doesnt work, the status does tho?!
+            await interaction.reply({ content:"This seemed to work.", ephemeral:true})
         }
 	}
 }

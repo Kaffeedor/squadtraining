@@ -27,6 +27,8 @@ client.on("interactionCreate", async (interaction) => { // listen to the interac
     if(command) { // test if the command exists
         try {
             await command.execute(interaction, client);
+            const message = await interaction.fetchReply();
+            console.log(message)
         } catch (error) {
             console.error(error);
 
@@ -39,9 +41,9 @@ client.on("interactionCreate", async (interaction) => { // listen to the interac
     }
 })
 
+//IGNORE: const myVariable = require('./path/to/command/file');
 //!! on member leave/kick/ban remove that member from the list
 //!! on role update, check if it is one of the wanted roles, then get the message id from the file, then update the list and update the embed(s)
 
 client.login(process.env.DISCORD_BOT_TOKEN) // Client logs in with the token from the .env file
 
-//IGNORE: members = message.guild.roles.cache.find(role => role.name === 'role name').members.map(m=>m.user.tag);
