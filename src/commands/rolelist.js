@@ -25,8 +25,6 @@ module.exports = {
         		const role_names = [`${options.getString("role1")}`,`${options.getString("role2")}`, `${options.getString("role3")}`, `${options.getString("role4")}`, `${options.getString("role5")}`];
 				const images = []; // fill up with strings of image links, or make it a subcommand or something idk
 				const colors = []; // fill up with HEX colors, or make it a subcommand or something idk
-				console.log(role_names);
-				console.log(`${role_names[0]}`);
 				let role_embeds = [];
 				let temp_embed;
 				let temp_role_members;
@@ -37,6 +35,7 @@ module.exports = {
 						.setColor(0x267509).setThumbnail('https://i.imgur.com/AfFp7pu.png') // Replace with colorsi] images[i]
 						.setTitle(role_names[i]).setAuthor({name:`Shows all Members with the '${role_names[i]}' Role`})
 						.setTimestamp().setFooter({text: 'Last updated:'});
+					console.log({name:guild.roles});
 					temp_role_members = guild.roles.cache.find(role => role.name === `${role_names[i]}`).members.map(m=>m.user.tag);
 					n = 2;
 					for(member in temp_role_members) {n++;
