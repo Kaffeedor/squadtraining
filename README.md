@@ -18,4 +18,6 @@ To Do:
     > A command to set the color of the embeds for each role (admin/dev command).
     
     > Make the rolelist not hard-coded for one guild but flexible and also just for each role take the role color and role name.
+
+    > Set Colors and Set Images (links) as subcommands next to "create" (which currently is the main/only one), also make it flexible
     
