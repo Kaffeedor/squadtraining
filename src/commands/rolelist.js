@@ -19,6 +19,7 @@ module.exports = {
 				let i_reply = await interaction.reply({ content:"Okay! Creating the role list right here", fetchReply:true, ephemeral:true});
 				const channel = await interaction.client.channels.fetch(i_reply.channelId);
 				const guild = await interaction.client.guilds.fetch(process.env.DISCORD_GUILD_ID); // have to use the hard coded guild here as for some reasion i_reply.guildId returns null
+				await guild.fetch();
 
 				const { options } = interaction;
 
@@ -35,12 +36,12 @@ module.exports = {
 						.setColor(0x267509).setThumbnail('https://i.imgur.com/AfFp7pu.png') // Replace with colorsi] images[i]
 						.setTitle(role_names[i]).setAuthor({name:`Shows all Members with the '${role_names[i]}' Role`})
 						.setTimestamp().setFooter({text: 'Last updated:'});
-					console.log({name:guild.roles});
-					temp_role_members = guild.roles.cache.find(role => role.name === `${role_names[i]}`).members.map(m=>m.user.tag);
+					temp_roles = guild.roles.cache.find(role=>role.name===role_names[i]);
+					temp_role_members = temp_roles.members.map(m=>m.user.tag);
 					n = 2;
-					for(member in temp_role_members) {n++;
-						if(n%3==0) {temp_embed.addFields({name:" ", value:`${member}`, inline:true})}
-						else {temp_embed.addFields({name:" ", value:`${member}`, inline:false})}	
+					for(let y=0; y<temp_role_members.length; y++) {n++;
+						if(n%3==0) {temp_embed.addFields({name:" ", value:`${temp_role_members[y]}`, inline:true})}
+						else {temp_embed.addFields({name:" ", value:`${temp_role_members[y]}`, inline:false})}	
 					}
 					role_embeds.push(temp_embed)
 				};
