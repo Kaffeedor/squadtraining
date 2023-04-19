@@ -1,9 +1,8 @@
 require("dotenv").config() // Import dotenv and run the config() method to load the .env file
 const fs = require("fs")
 //!! const role_message_id = require('commands/rolelist.js');
-const { Client, Collection } = require("discord.js") // Import Client from discord.js
-
-const client = new Client({intents:[]}) // Initialize the client
+const { Client, Collection, GatewayIntentBits } = require("discord.js") // Import Client from discord.js
+const client = new Client({intents:[GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildMembers]}); // Initialize the client
 
 client.commands = new Collection()  // Add client.commands to a new collection (so you can get the commmands in every client instance)
 
@@ -40,9 +39,7 @@ client.on("interactionCreate", async (interaction) => { // listen to the interac
             }
         }
     }
-})
-
-
+});
 
 //!! on role update, check if it is one of the wanted roles, then get the message id from the file, then update the list and update the embed(s)
 //!! on member leave/kick/ban remove that member from the list
