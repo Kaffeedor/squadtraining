@@ -1,7 +1,8 @@
 # squadtraining
 squad training stuff
 
-in code comments marked like following are not working stuff and thoughts how to solve it: //!!
+WHY THE HELL DOES THE ROLE THINGY COMMAND ONLY SHOW WHEN cato#0487 (me) HAS A ROLE AND ELSE IT IS EMPTY AND ALSO DOESNT SHOW OTHER MEMBERS WITH THE SAME ROLE????!?!!!?!?!
+discord-js is so weird
 
 To Do:
 
