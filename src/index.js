@@ -21,8 +21,3 @@ eventFiles.forEach((eventFile) => {
 
 
 client.login(DISCORD_BOT_TOKEN);
-
-// !! const role_message_id = require('commands/rolelist.js');
-
-// !! on role update, check if it is one of the wanted roles, then get the message id from the file, then update the list and update the embed(s)
-// !! on member leave/kick/ban remove that member from the list
