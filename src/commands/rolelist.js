@@ -25,6 +25,7 @@
 					const role_names = [`${options.getString("role1")}`,`${options.getString("role2")}`, `${options.getString("role3")}`, `${options.getString("role4")}`, `${options.getString("role5")}`];
 					const images = []; // fill up with strings of image links, or make it a subcommand or something idk
 					const colors = []; // fill up with HEX colors, or make it a subcommand or something idk
+
 					let role_embeds = [];
 					let temp_embed;
 					let temp_role_members;
@@ -32,7 +33,7 @@
 
 					for(let i=0; i<5; i++) {n=2;
 						temp_embed = new EmbedBuilder() // create the embed for each role
-							.setColor(0x267509).setThumbnail('https://i.imgur.com/AfFp7pu.png') // Replace with colorsi] images[i]
+							.setColor(0x267509).setThumbnail('https://cdn.discordapp.com/attachments/703142463392448532/1102188329824432229/image.png') // Replace with colorsi] images[i]
 							.setTitle(role_names[i]).setAuthor({name:`Shows all Members with the '${role_names[i]}' Role`})
 							.setTimestamp().setFooter({text: 'Last updated:'});
 						temp_role_members = await guild.roles.cache.find(role=>role.name===role_names[i]).members.map(m=>m.user.tag);
