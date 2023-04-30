@@ -1,12 +1,10 @@
 require('dotenv').config();
 const ADMIN_USERID_1 = process.env.ADMIN_USERID_1;
 const ADMIN_USERID_2 = process.env.ADMIN_USERID_2;
+
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { EmbedBuilder } = require('@discordjs/builders');
-
-let messageID;
-let role_names;
-module.exports = messageID, role_names;
+const fileOps = require('../data/FileOperations.js');
 
 function nick_or_username(m) {
 	if (m.nickname != null) { return m.nickname; }
@@ -22,6 +20,7 @@ module.exports = {
 		.addStringOption(option => option.setName('role4').setDescription('Input the name of the fourth Role').setMaxLength(128).setRequired(true))
 		.addStringOption(option => option.setName('role5').setDescription('Input the name of the fifth Role').setMaxLength(128).setRequired(true)),
 	async execute(interaction) {
+		const author_id = interaction.user.id;
 		if (interaction.user.id != ADMIN_USERID_1 && interaction.user.id != ADMIN_USERID_2) {
 			return await interaction.reply({
 				content: 'This Command is only for bot-devs/-admins.',
@@ -40,7 +39,7 @@ module.exports = {
 
 			const { options } = interaction;
 
-			role_names = [`${options.getString('role1')}`, `${options.getString('role2')}`, `${options.getString('role3')}`, `${options.getString('role4')}`, `${options.getString('role5')}`];
+			let role_names = [`${options.getString('role1')}`, `${options.getString('role2')}`, `${options.getString('role3')}`, `${options.getString('role4')}`, `${options.getString('role5')}`];
 			const images = []; // fill up with strings of image links, or make it a subcommand or something idk
 			const colors = []; // fill up with HEX colors, or make it a subcommand or something idk
 
@@ -81,10 +80,11 @@ module.exports = {
 				role_embeds.push(temp_embed);
 			}
 
-			messageID = channel.send({
+			const message = await channel.send({
 				embeds: role_embeds,
 				fetch: true,
-			}).id;
+			});
+			fileOps.write0('./src/data/RoleListMessages.json', message.id, role_names, author_id);
 		}
 	},
 };

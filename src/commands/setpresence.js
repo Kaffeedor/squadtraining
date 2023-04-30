@@ -19,7 +19,14 @@ module.exports = {
 
 		if (interaction.user.id != ADMIN_USERID_1 && interaction.user.id != ADMIN_USERID_2) {return await interaction.reply({ content:'This Command is only for bot-devs/-admins.', ephemeral:true });}
 		else {
-			interaction.client.user.setPresence({ activities: [{ name:`${content}`, type:`${type}`, url:`${url}` }], status:`${status}` });
+			interaction.client.user.setPresence({
+				activities: [{
+					name: `${content}`,
+					type:`${type}`,
+					url:`${url}`,
+				}],
+				status:`${status}`,
+			});
 			await interaction.reply({ content:'This seemed to work.', ephemeral:true });
 		}
 	},
