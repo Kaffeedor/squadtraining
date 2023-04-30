@@ -5,6 +5,8 @@ in code comments marked like following are not working stuff and thoughts how to
 
 To Do:
 
+    > add VC-member counter ("Playing with [number of people in vc] Squaddies");
+
     > Get the role list command working.
     
     > Set the pictures of the embeds right.
