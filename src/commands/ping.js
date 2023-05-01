@@ -7,7 +7,7 @@ module.exports = {
 	data: new SlashCommandBuilder().setName('ping').setDescription('Pong!'),
 	async execute(interaction) {
 		await interaction.reply({
-			content: '🏓Pong!',
+			content: '🏓Pong!, For issues, suggestions, etc. write me on Discord cato#0487',
 			ephemeral: true,
 		});
 	},
