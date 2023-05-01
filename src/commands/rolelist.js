@@ -5,6 +5,7 @@ const ADMIN_USERID_2 = process.env.ADMIN_USERID_2;
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { EmbedBuilder } = require('@discordjs/builders');
 const fileOps = require('../data/FileOperations.js');
+const { v4: uuidv4 } = require('uuid');
 
 function nick_or_username(m) {
 	if (m.nickname != null) { return m.nickname; }
@@ -39,9 +40,10 @@ module.exports = {
 
 			const { options } = interaction;
 
-			let role_names = [`${options.getString('role1')}`, `${options.getString('role2')}`, `${options.getString('role3')}`, `${options.getString('role4')}`, `${options.getString('role5')}`];
+			const role_names = [`${options.getString('role1')}`, `${options.getString('role2')}`, `${options.getString('role3')}`, `${options.getString('role4')}`, `${options.getString('role5')}`];
 			const images = []; // fill up with strings of image links, or make it a subcommand or something idk
 			const colors = []; // fill up with HEX colors, or make it a subcommand or something idk
+			const key = uuidv4().toString();
 
 			const role_embeds = [];
 			let temp_embed;
@@ -55,7 +57,7 @@ module.exports = {
 						name: `Shows all Members with the '${role_names[i]}' Role`,
 					})
 					.setTimestamp().setFooter({
-						text: 'Last updated:',
+						text: `Key: ${key} | Last Updated: `,
 					});
 
 				temp_role_id = await allRoles.find(role => role.name === role_names[i]).id;
@@ -84,7 +86,7 @@ module.exports = {
 				embeds: role_embeds,
 				fetch: true,
 			});
-			fileOps.write0('./src/data/RoleListMessages.json', message.id, role_names, author_id);
+			fileOps.appendRoleListMessage('./src/data/RoleListMessages.json', key, message.id, role_names, author_id);
 		}
 	},
 };
