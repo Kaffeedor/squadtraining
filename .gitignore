@@ -1,4 +1,5 @@
 node_modules
 package-lock.json
 .env
-.\src\data\RoleListMessages.json
+src/data/RoleListMessages.json
+src\data\RoleListMessages.json
