@@ -17,7 +17,7 @@ module.exports = {
 		return JSON.parse(fs.readFileSync(fileName, 'utf8'));
 	},
 	getObjWithHighestIndex: function getObjWithHighestIndex(fileName) {
-		const obj = JSON.parse(fs.readFileSync(fileName));
+		const obj = JSON.parse(fs.readFileSync(fileName, 'utf-8'));
 		return obj[HighestIndex(obj)];
 	},
 	appendRoleListMessage: function appendRoleListMessage(fileName, objectKey, messageID, channelID, guildID, roleNames, author) {
