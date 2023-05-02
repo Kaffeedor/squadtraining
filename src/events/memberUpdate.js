@@ -8,10 +8,10 @@ function nick_or_username(m) {
 }
 
 module.exports = {
-	name: Event.GuildRoleUpdate,
+	name: Events.GuildMemberUpdate,
 	async execute(client) {
-		console.log('TEST');
 		const msgObj = fileOps.getObjWithHighestIndex('./src/data/RoleListMessages.json');
+		console.log(msgObj);
 		const messageID = msgObj.messageID;
 		const channelID = msgObj.channelID;
 		// const guildID = msgObj.guildID; not needed
