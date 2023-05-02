@@ -6,8 +6,10 @@ Info:
 
 To Do:
 
+    > Get the Role List updating on Role Change/Member Leave to work.
+
+    > Set the pictures and colors of the Role List embeds right.
+
     > add VC-member counter ("Playing with [number of people in vc] Squaddies");
-    
-    > Set the pictures and colors of the embeds right.
     
     > Get the Set Presence Command to work (admin/dev command) or remove it.
