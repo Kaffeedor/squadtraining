@@ -1,1 +1,15 @@
-{"message_0":{"index":0,"messageID":"EXAMPLE_ID","role_names":["EXAMPLE1_ROLE_NAME","EXAMPLE2_ROLE_NAME","EXAMPLE3_ROLE_NAME","EXAMPLE4_ROLE_NAME","EXAMPLE5_ROLE_NAME"],"author":"EXAMPLE_AUTHOR"}}
+{
+    "message_ID": {
+        "index":0,
+        "messageID":"EXAMPLE_ID",
+        "channelID":"EXAMPLE_ID",
+        "guildID":"EXAMPLE_ID",
+        "role_names":[
+            "EXAMPLE1_ROLE_NAME",
+            "EXAMPLE2_ROLE_NAME",
+            "EXAMPLE3_ROLE_NAME",
+            "EXAMPLE4_ROLE_NAME",
+            "EXAMPLE5_ROLE_NAME"],
+        "author":"EXAMPLE_AUTHOR"
+    }
+}

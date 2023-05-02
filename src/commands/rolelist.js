@@ -34,6 +34,7 @@ module.exports = {
 				ephemeral: true,
 			});
 			const channel = await interaction.client.channels.fetch(i_reply.channelId);
+			const guildID = channel.guild.id;
 			const allMembers = await interaction.guild.members.fetch();
 			const allRoles = await interaction.guild.roles.fetch();
 
@@ -84,7 +85,7 @@ module.exports = {
 				embeds: role_embeds,
 				fetch: true,
 			});
-			fileOps.appendRoleListMessage('./src/data/RoleListMessages.json', message.id, message.id, role_names, author_id);
+			fileOps.appendRoleListMessage('./src/data/RoleListMessages.json', message.id, message.id, i_reply.channelId, guildID, role_names, author_id);
 		}
 	},
 };
