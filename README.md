@@ -177,6 +177,8 @@ Project Link: [https://github.com/Kaffeedor/squadtraining](https://github.com/Ka
 
 * [ReadmeTemplate](https://github.com/othneildrew/Best-README-Template)
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
