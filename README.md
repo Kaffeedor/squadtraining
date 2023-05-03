@@ -155,7 +155,7 @@ If you have a suggestion that would make this better or want to help fix somethi
 <!-- CONTACT -->
 ## Contact
 
-Murphy - [Discord: cato#0487](https://discord.com/)
+Murphy - [Discord: cato#0487](https://discordapp.com/users/299231065783009290)
 
 Project Link: [https://github.com/Kaffeedor/squadtraining](https://github.com/Kaffeedor/squadtraining)
 
@@ -176,6 +176,8 @@ Project Link: [https://github.com/Kaffeedor/squadtraining](https://github.com/Ka
 ## Acknowledgements
 
 * [ReadmeTemplate](https://github.com/othneildrew/Best-README-Template)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
