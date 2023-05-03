@@ -129,7 +129,7 @@ Type "/" in your Discord Server where the bot is and you should be able to see a
     - [ ] Automatic updating
     - [ ] Set right pictures and colors
 - [ ] Set Presence Command
-- [ ] Auto VC Member cound
+- [ ] Auto VC Member count
 
 See the [open issues](https://github.com/Kaffeedor/squadtraining/issues) for a full list of proposed features (and known issues).
 
