@@ -41,8 +41,8 @@ module.exports = {
 			const { options } = interaction;
 
 			const role_names = [`${options.getString('role1')}`, `${options.getString('role2')}`, `${options.getString('role3')}`, `${options.getString('role4')}`, `${options.getString('role5')}`];
-			const images = []; // fill up with strings of image links, or make it a subcommand or something idk
-			const colors = []; // fill up with HEX colors, or make it a subcommand or something idk
+			const images = ['https://cdn.discordapp.com/emojis/834562765514473493.webp?size=48&quality=lossless', 'https://cdn.discordapp.com/emojis/834902172264955916.webp?size=48&quality=lossless', 'https://cdn.discordapp.com/emojis/834562967172546590.webp?size=48&quality=lossless', 'https://cdn.discordapp.com/emojis/834564467961364531.webp?size=48&quality=lossless', 'https://cdn.discordapp.com/emojis/895689503585488897.webp?size=48&quality=lossless']; // change order maybe?
+			const colors = [0x276f47, 0x7c4991, 0xbc5c34, 0x37a171, 0x709623]; // change order maybe?
 
 			const role_embeds = [];
 			let temp_embed;
@@ -51,10 +51,8 @@ module.exports = {
 
 			for (let i = 0; i < 5; i++) {
 				temp_embed = new EmbedBuilder()
-					.setColor(0x267509).setThumbnail('https://cdn.discordapp.com/attachments/703142463392448532/1102188329824432229/image.png') // Replace with colorsi] images[i]
-					.setTitle(role_names[i]).setAuthor({
-						name: `Shows all Members with the '${role_names[i]}' Role`,
-					})
+					.setColor(colors[i]).setThumbnail(`${images[i]}`)
+					.setTitle(role_names[i])
 					.setTimestamp().setFooter({
 						text: 'Last Updated:',
 					});

@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Kaffeedor/squadtraining">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://cdn.discordapp.com/icons/768599246068514827/0ba13b9c7bc1650133c72db254a8bd36.webp?size=96" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Squad Training Stuff</h3>
@@ -127,7 +127,7 @@ Type "/" in your Discord Server where the bot is and you should be able to see a
 - [ ] Role List
     - [x] Command
     - [x] Automatic updating
-    - [ ] Set right pictures and colors
+    - [x] Set right pictures and colors
 - [x] Set Presence Command
 - [ ] Auto VC Member count
 - [ ] /endround command
