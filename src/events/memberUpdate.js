@@ -47,7 +47,7 @@ module.exports = {
 
 			for (let y = 0; y < temp_role_members.length; y++) {
 				if (temp_role_members[y] != undefined && temp_role_members[y] != null) {
-					if ((y + 1) % 3 == 0) {
+					if ((y + 1) % 2 == 0) {
 						temp_embed.addFields({
 							name: ' ',
 							value: `${temp_role_members[y]}`,
