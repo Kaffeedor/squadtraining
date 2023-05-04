@@ -126,7 +126,7 @@ Type "/" in your Discord Server where the bot is and you should be able to see a
 - [x] Ping Command
 - [ ] Role List
     - [x] Command
-    - [ ] Automatic updating
+    - [x] Automatic updating
     - [ ] Set right pictures and colors
 - [x] Set Presence Command
 - [ ] Auto VC Member count
