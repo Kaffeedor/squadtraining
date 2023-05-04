@@ -1,5 +1,5 @@
 const { Events } = require('discord.js');
-const { EmbedBuilder } = require('@discordjs/builders');
+const { EmbedBuilder, roleMention } = require('@discordjs/builders');
 const fileOps = require('../data/FileOperations.js');
 
 function nick_or_username(m) {
@@ -11,16 +11,15 @@ module.exports = {
 	name: Events.GuildMemberUpdate,
 	async execute(client) {
 		const msgObj = fileOps.getObjWithHighestIndex('./src/data/RoleListMessages.json');
-		console.log(msgObj);
 		const messageID = msgObj.messageID;
 		const channelID = msgObj.channelID;
 		// const guildID = msgObj.guildID; not needed
-		const role_names = msgObj.roleList;
-		// const author = msgObj.author; not needed
+		const role_names = msgObj.role_names;
+		// const author = msgObj.author; not needed (yet)
 
-		const channel = await client.channels.fetch(`${channelID}`);
-		const guild = await channel.guild.fetch();
-		const message = channel.messages.fetch(messageID);
+		const guild = await client.guild;
+		const channel = await guild.channels.fetch(`${channelID}`);
+		const message = await channel.messages.fetch(`${messageID}`);
 		const allMembers = await guild.members.fetch();
 		const allRoles = await guild.roles.fetch();
 
