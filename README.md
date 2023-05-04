@@ -128,8 +128,9 @@ Type "/" in your Discord Server where the bot is and you should be able to see a
     - [x] Command
     - [ ] Automatic updating
     - [ ] Set right pictures and colors
-- [ ] Set Presence Command
+- [x] Set Presence Command
 - [ ] Auto VC Member count
+- [ ] /endround command
 
 See the [open issues](https://github.com/Kaffeedor/squadtraining/issues) for a full list of proposed features (and known issues).
 
