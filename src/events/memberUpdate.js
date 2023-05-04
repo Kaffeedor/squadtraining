@@ -1,5 +1,5 @@
 const { Events } = require('discord.js');
-const { EmbedBuilder, roleMention } = require('@discordjs/builders');
+const { EmbedBuilder } = require('@discordjs/builders');
 const fileOps = require('../data/FileOperations.js');
 
 function nick_or_username(m) {
