@@ -126,7 +126,7 @@ Type "/" in your Discord Server where the bot is and you should be able to see a
 
 - [x] Basic Bot setup
 - [x] Ping Command
-- [ ] Role List
+- [x] Role List
     - [x] Command
     - [x] Automatic updating
     - [x] Set right pictures and colors
