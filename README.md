@@ -19,9 +19,9 @@
   <p align="center">
     A small Discord bot for the "Squad Training" Community.
     <br />
-    <a href="https://github.com/Kaffeedor/squadtraining/issues">Report Bug</a>
+    <a href="https://github.com/Kaffeedor/squadtraining/issues">Report a Bug</a>
     ·
-    <a href="https://github.com/Kaffeedor/squadtraining/issues">Request Feature</a>
+    <a href="https://github.com/Kaffeedor/squadtraining/issues">Request a Feature</a>
   </p>
 </div>
 

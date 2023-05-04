@@ -63,19 +63,21 @@ module.exports = {
 				temp_role_members = await allMembers.filter(member => member._roles.some(role => role === temp_role_id)).map(m => nick_or_username(m));
 
 				for (let y = 0; y < temp_role_members.length; y++) {
-					if ((y + 1) % 3 == 0) {
-						temp_embed.addFields({
-							name: ' ',
-							value: `${temp_role_members[y]}`,
-							inline: false,
-						});
-					}
-					else {
-						temp_embed.addFields({
-							name: ' ',
-							value: `${temp_role_members[y]}`,
-							inline: true,
-						});
+					if (temp_role_members[y] != undefined && temp_role_members[y] != null) {
+						if ((y + 1) % 2 == 0) {
+							temp_embed.addFields({
+								name: ' ',
+								value: `${temp_role_members[y]}`,
+								inline: false,
+							});
+						}
+						else {
+							temp_embed.addFields({
+								name: ' ',
+								value: `${temp_role_members[y]}`,
+								inline: true,
+							});
+						}
 					}
 				}
 				role_embeds.push(temp_embed);
