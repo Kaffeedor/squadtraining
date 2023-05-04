@@ -29,7 +29,7 @@ module.exports = {
 			interaction.client.user.setPresence({ status:`${status}` });
 			interaction.client.user.setActivity({
 				name: `${content}`,
-				type: `${type}`,
+				type: parseInt(type),
 				url:`${url}`,
 			});
 			await interaction.reply({ content:'This seemed to work.', ephemeral:true });
