@@ -115,6 +115,8 @@ Start the bot:
 
 Type "/" in your Discord Server where the bot is and you should be able to see and use all commands (that are currently working).
 
+!! Order of images and colors: SL, FTL, Armor, Heli, Mortar !!
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
