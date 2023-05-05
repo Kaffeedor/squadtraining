@@ -14,7 +14,10 @@ function HighestIndex(obj) {
 
 module.exports = {
 	read: function read(fileName) {
-		return JSON.parse(fs.readFileSync(fileName, 'utf8'));
+		return fs.readFileSync(fileName, 'utf8');
+	},
+	write: function write(fileName, content) {
+		fs.writeFileSync({ file: fileName, data: content, encoding: 'utf8' });
 	},
 	getObjWithHighestIndex: function getObjWithHighestIndex(fileName) {
 		const obj = JSON.parse(fs.readFileSync(fileName, 'utf-8'));
