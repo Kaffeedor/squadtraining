@@ -57,6 +57,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+A small Discord bot for the SquadTraining Community.
 (The File Data is so "over-done" in case it is gonna get more dynamic in the future with editing specific RoleList Embeds etc. It is not really needed right now.)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
