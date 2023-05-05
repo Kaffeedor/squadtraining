@@ -64,6 +64,5 @@ module.exports = {
 		}
 
 		await message.edit({ embeds: role_embeds });
-		console.log(`Updated Message ${messageID}`);
 	},
 };
