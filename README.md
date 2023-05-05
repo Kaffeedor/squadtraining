@@ -89,7 +89,8 @@
    npm install
    ```
 6. Enter all the Tokens and IDs required in [.env.example](https://github.com/Kaffeedor/squadtraining/blob/main/.env.example) in your `.env`.
-7. Deploy the commands (This will only make them locally available in your Guild; check (deploy-commands.js)[https://github.com/Kaffeedor/squadtraining/blob/main/src/deploy-commands.js] for more).
+7. Remove the ".example" from [RoleListMessages.json](https://github.com/Kaffeedor/squadtraining/blob/main//src/data/RoleListMessages.json.example).
+8. Deploy the commands (This will only make them locally available in your Guild; check (deploy-commands.js)[https://github.com/Kaffeedor/squadtraining/blob/main/src/deploy-commands.js] for more).
    ```sh
    npm run deployCommands
    ```
