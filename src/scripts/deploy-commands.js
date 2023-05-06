@@ -9,7 +9,7 @@ const commands = [];
 
 const commandFiles = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js'));
 commandFiles.forEach((commandFile) => {
-	const command = require(`./commands/${commandFile}`);
+	const command = require(`../commands/${commandFile}`);
 	commands.push(command.data.toJSON());
 });
 
