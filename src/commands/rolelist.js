@@ -105,8 +105,8 @@ module.exports = {
 							}
 						}
 					}
-					role_embeds.push(temp_embed1, temp_embed2);
 				}
+				role_embeds.push(temp_embed1, temp_embed2);
 			}
 
 			const message = await channel.send({

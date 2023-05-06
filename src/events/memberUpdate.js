@@ -27,40 +27,67 @@ module.exports = {
 		const colors = [0x276f47, 0x7c4991, 0xbc5c34, 0x37a171, 0x709623]; // change order maybe?
 
 		const role_embeds = [];
-		let temp_embed;
+		let temp_embed1;
+		let temp_embed2;
 		let temp_role_id;
 		let temp_role_members;
 
 		for (let i = 0; i < 5; i++) {
-			temp_embed = new EmbedBuilder()
+			temp_embed1 = new EmbedBuilder()
 				.setColor(colors[i]).setThumbnail(`${images[i]}`)
 				.setTitle(role_names[i])
 				.setTimestamp().setFooter({
-					text: 'Last Updated:',
+					text: 'Part 1 | Last Updated:',
+				});
+			temp_embed2 = new EmbedBuilder()
+				.setColor(colors[i]).setThumbnail(`${images[i]}`)
+				.setTitle(role_names[i])
+				.setTimestamp().setFooter({
+					text: 'Part 2 | Last Updated:',
 				});
 
 			temp_role_id = await allRoles.find(role => role.name === role_names[i]).id;
 			temp_role_members = await allMembers.filter(member => member._roles.some(role => role === temp_role_id)).map(m => nick_or_username(m));
 
 			for (let y = 0; y < temp_role_members.length; y++) {
-				if (temp_role_members[y] != undefined && temp_role_members[y] != null) {
-					if ((y + 1) % 2 == 0) {
-						temp_embed.addFields({
-							name: ' ',
-							value: `${temp_role_members[y]}`,
-							inline: false,
-						});
+				if (y > 25) {
+					if (temp_role_members[y] != undefined && temp_role_members[y] != null) {
+						if ((y + 1) % 2 == 0) {
+							temp_embed2.addFields({
+								name: ' ',
+								value: `${temp_role_members[y]}`,
+								inline: false,
+							});
+						}
+						else {
+							temp_embed2.addFields({
+								name: ' ',
+								value: `${temp_role_members[y]}`,
+								inline: true,
+							});
+						}
 					}
-					else {
-						temp_embed.addFields({
-							name: ' ',
-							value: `${temp_role_members[y]}`,
-							inline: true,
-						});
+				}
+				if (y > 25) {
+					if (temp_role_members[y] != undefined && temp_role_members[y] != null) {
+						if ((y + 1) % 2 == 0) {
+							temp_embed1.addFields({
+								name: ' ',
+								value: `${temp_role_members[y]}`,
+								inline: false,
+							});
+						}
+						else {
+							temp_embed1.addFields({
+								name: ' ',
+								value: `${temp_role_members[y]}`,
+								inline: true,
+							});
+						}
 					}
 				}
 			}
-			role_embeds.push(temp_embed);
+			role_embeds.push(temp_embed1, temp_embed2);
 		}
 
 		await message.edit({ embeds: role_embeds });
