@@ -11,6 +11,7 @@ const commandFiles = fs.readdirSync('./src/commands').filter(file => file.endsWi
 commandFiles.forEach((commandFile) => {
 	const command = require(`../commands/${commandFile}`);
 	commands.push(command.data.toJSON());
+	console.log(`Found command: ${commandFile}`);
 });
 
 const restClient = new REST({
