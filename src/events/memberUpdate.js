@@ -68,7 +68,8 @@ module.exports = {
 						}
 					}
 				}
-				if (y > 25) {
+				else {
+					// eslint-disable-next-line no-lonely-if
 					if (temp_role_members[y] != undefined && temp_role_members[y] != null) {
 						if ((y + 1) % 2 == 0) {
 							temp_embed1.addFields({
