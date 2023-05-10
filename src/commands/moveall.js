@@ -1,20 +1,18 @@
-// Import the SlashCommandBuilder from Discordjs Builders for easier command building
+require('dotenv').config();
+const DISCORD_MAIN_CHANNEL_ID = process.env.DISCORD_MAIN_CHANNEL_ID;
+const DISCORD_AFK_CHANNEL_ID = process.env.DISCORD_AFK_CHANNEL_ID;
+
 const {
 	SlashCommandBuilder,
 } = require('@discordjs/builders');
-
-// const EndVC_ID = '905846677179609128';
-// const AFKVC_ID = '832644058391248916';
-const EndVC_ID = '943806578115637268';
-const AFKVC_ID = '943946094398808084';
 
 
 module.exports = {
 	data: new SlashCommandBuilder().setName('endround').setDescription('Move all members to one VC.'),
 	async execute(interaction) {
 		const guildChannels = await interaction.guild.channels.fetch();
-		const endVoiceChannel = guildChannels.find(channel => channel.type == 2 && String(channel.id) == EndVC_ID);
-		const allVoiceChannels = guildChannels.filter(channel => channel.type == 2 && String(channel.id) !== AFKVC_ID);
+		const endVoiceChannel = guildChannels.find(channel => channel.type == 2 && String(channel.id) == DISCORD_MAIN_CHANNEL_ID);
+		const allVoiceChannels = guildChannels.filter(channel => channel.type == 2 && String(channel.id) !== DISCORD_AFK_CHANNEL_ID);
 
 		allVoiceChannels.forEach(channel =>
 			channel.members.forEach(member =>
