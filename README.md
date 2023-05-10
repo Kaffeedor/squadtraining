@@ -106,17 +106,17 @@ A small Discord bot for the SquadTraining Community.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Start the bot:
+### Getting started
 
-    - For running it one time use:
-       ```sh
-       npm run start
-       ```
+- For running it one time use:
+    ```sh
+    npm run start
+    ```
 
-    - For keeping it running while changing and editing files use:
-       ```sh
-       npm run dev
-       ```
+- For keeping it running while changing and editing files use:
+    ```sh
+    npm run dev
+    ```
 
 Type "/" in your Discord Server where the bot is and you should be able to see and use all commands (that are currently working).
 
@@ -135,8 +135,9 @@ Type "/" in your Discord Server where the bot is and you should be able to see a
     - [x] Command
     - [x] Automatic updating
     - [x] Set right pictures and colors
+    - [ ] Make it better (see issues page)
 - [x] Set Presence Command
-- [ ] Auto VC Member count
+- [ ] Auto VC Member count (maybe not?)
 - [ ] /endround command
 
 See the [open issues](https://github.com/Kaffeedor/squadtraining/issues) for a full list of proposed features (and known issues).
