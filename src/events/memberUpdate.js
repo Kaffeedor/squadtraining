@@ -50,45 +50,45 @@ module.exports = {
 			temp_role_members = await allMembers.filter(member => member._roles.some(role => role === temp_role_id)).map(m => nick_or_username(m));
 
 			for (let y = 0; y < temp_role_members.length; y++) {
-				if (y > 25) {
-					if (temp_role_members[y] != undefined && temp_role_members[y] != null) {
-						if ((y + 1) % 2 == 0) {
-							temp_embed2.addFields({
-								name: ' ',
-								value: `${temp_role_members[y]}`,
-								inline: false,
-							});
-						}
-						else {
-							temp_embed2.addFields({
-								name: ' ',
-								value: `${temp_role_members[y]}`,
-								inline: true,
-							});
-						}
+				if (y > 24 && temp_role_members[y] != undefined && temp_role_members[y] != null) {
+					if ((y + 1) % 2 == 0) {
+						temp_embed2.addFields({
+							name: ' ',
+							value: `${temp_role_members[y]}`,
+							inline: false,
+						});
+					}
+					else {
+						temp_embed2.addFields({
+							name: ' ',
+							value: `${temp_role_members[y]}`,
+							inline: true,
+						});
 					}
 				}
-				else {
-					// eslint-disable-next-line no-lonely-if
-					if (temp_role_members[y] != undefined && temp_role_members[y] != null) {
-						if ((y + 1) % 2 == 0) {
-							temp_embed1.addFields({
-								name: ' ',
-								value: `${temp_role_members[y]}`,
-								inline: false,
-							});
-						}
-						else {
-							temp_embed1.addFields({
-								name: ' ',
-								value: `${temp_role_members[y]}`,
-								inline: true,
-							});
-						}
+				else if (y <= 24 && temp_role_members[y] != undefined && temp_role_members[y] != null) {
+					if ((y + 1) % 2 == 0) {
+						temp_embed1.addFields({
+							name: ' ',
+							value: `${temp_role_members[y]}`,
+							inline: false,
+						});
+					}
+					else {
+						temp_embed1.addFields({
+							name: ' ',
+							value: `${temp_role_members[y]}`,
+							inline: true,
+						});
 					}
 				}
 			}
-			role_embeds.push(temp_embed1, temp_embed2);
+			if (parseInt(temp_role_members.length) > 24) {
+				role_embeds.push(temp_embed1, temp_embed2);
+			}
+			else {
+				role_embeds.push(temp_embed1);
+			}
 		}
 
 		await message.edit({ embeds: role_embeds });
